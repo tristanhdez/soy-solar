@@ -1,0 +1,26 @@
+<link href="{{ url_for('static',filename='css/ingc/login.css') }}" rel="stylesheet" type="text/css">
+<div class="overlay">
+    <div class="container">
+       <div class="con">
+       <header class="head-form">
+          <img src="/static/img/icons/solar_icon_head.png" alt="Solar" class="solar-img">
+          <h2>print('Iniciar Sesión')</h2><br>
+          <p>console.log('\nWelcome!')</p>
+       </header>
+       <br>
+       <form action="{{ url_for('ingc.verify') }}" method="POST">
+            <div class="field-set">
+                    <span class="input-item">
+                    <i class="fa fa-user-circle"></i>
+                    </span>
+                    <input class="form-input" name="code" id="txt-input" type="text" placeholder="Código de Alumno" required>
+                    <br><br>
+                <button type="submit" class="log-in">Ingresar</button>
+            </div>
+        </form>
+    </div>
+       <div class="other">
+          <button class="btn submits frgt-pass">¿Olvidaste tu Contraseña?</button>
+       </div>
+      </div>
+    </div>
