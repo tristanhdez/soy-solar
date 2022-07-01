@@ -1,0 +1,102 @@
+{"intents": [
+    {"tag": "greeting",
+     "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Hola", "¡Qué onda!", "Holis", "Hola", "¡Qué tal!", "Whatsupp?"],
+     "responses": ["Hello, Hola", "¡Bienvenid@!", "Hola, soy Solar, ¿En qué te puedo ayudar?"],
+     "context_set": ""
+    },
+    {"tag": "goodbye",
+     "patterns": ["Bye", "See you later", "Goodbye", "Adiós", "Hasta Luego", "Nos vemos", "Cámara", "Sale"],
+     "responses": ["Gracias por visitarnos", "¡Ten un buen día!", "Bye!", "Nos vemos"]
+    },
+    {"tag": "thanks",
+     "patterns": ["Thanks", "Thank you", "That's helpful", "Gracias", "Chido", "Muchas Gracias"],
+     "responses": ["Happy to help!", "Any time!", "My pleasure", "¡De nada!", "No hay problema", "¡De na'!"]
+    },
+    {"tag": "rulestudent",
+     "patterns": ["¿Cuál es el reglamento del Estudiante?", "Reglamento Estudiante", "Reglamento de Estudiante", "Reglamento", "Reglas Estudiante", "Rule Student"],
+     "responses": ["Enlace de La Normativa General de la Universidad De Guadalajara:\n http://www.cutonala.udg.mx/centro/normatividad 🗡️"]
+    },
+    {"tag": "article34",
+     "patterns": ["Which mopeds do you have?", "What kinds of mopeds are there?", "What do you rent?" ],
+     "responses": ["Este documento podrás encontrar toda la información referente al artículo 34 en las páginas 5 y 6: http://www.secgral.udg.mx/sites/archivos/normatividad/general/ReglamentoGralEPAlumnos.pdf"]
+    },
+    {"tag": "identification",
+     "patterns": ["¿A dónde puedo dirigirme para tramitar la credencial de estudiante?","¿Qué sucede si perdí mi credencial de estudiante?", "Credencial Estudiante", "Identification Student", "ID Student"],
+     "responses": ["Link para realizar tu TRÁMITE en caso de extravío, renovación, etc. https://mw.siiau.udg.mx/Portal/login.xhtml "]
+    },
+    {"tag": "opentoday",
+     "patterns": ["Are you open today?", "When do you open today?", "What are your hours today?"],
+     "responses": ["We're open every day from 9am-9pm", "Our hours are 9am-9pm every day"]
+    },
+    {"tag": "scholarcontrol",
+     "patterns": ["¿Cuáles son los horarios de atención en el sistema de control escolar?", "Control Escolar Horario", "Hora Control Escolar", "¿Cuál es el horario de Control Escolar?", "Scholar Control Schedule"],
+     "responses": ["Atención de Lunes a Viernes de 9:00 a 17:00 horas.\n Más información http://www.cutonala.udg.mx/servicios/control-escolar/contactoce "],
+     "context_set": "scholar_control"
+    },
+    {"tag": "digital_library",
+     "patterns": ["¿Cómo puedo obtener el acceso a la biblioteca digital?", "biblioteca digital", "Entrar a Biblioteca Digital", "digital library"],
+     "responses": ["Deberás ingresar a este link e iniciar sesión:  https://wdg.biblio.udg.mx/"],
+     "context_filter": "digital_library"
+    },
+    {"tag": "curriculum_career",
+        "patterns": ["¿Dónde puedo consultar la malla curricular?", "Malla Curricular INGC", "Malla INGC", "Malla", "Curricular", "Malla Curricular"],
+        "responses": ["Deberás ingresar a este link e iniciar sesión:  https://wdg.biblio.udg.mx/"],
+        "context_filter": "curriculum_career"
+       },
+    {"tag": "curriculum_career",
+    "patterns": ["¿Dónde puedo consultar la malla curricular?", "Malla Curricular INGC", "Malla INGC", "Malla", "Curricular", "Malla Curricular"],
+    "responses": ["Deberás ingresar a este link e iniciar sesión:  https://wdg.biblio.udg.mx/"],
+    "context_filter": "curriculum_career"
+    },
+    {"tag": "idioms",
+    "patterns": ["¿Dónde obtengo información sobre el centro global de idiomas?", "idiomas", "global idiomas", "centro global de idiomas", "centro global idiomas", "centro idiomas", "global idiomas", "horario global idiomas", "horario idiomas", "¿Cuál es el horario de idiomas?"],
+    "responses": ["El Centro Global de Idiomas del Centro Universitario de Tonalá, es una opción para aprender diferentes idiomas a tu ritmo y a tus horas, auxiliándote de cursos, talleres y de las nuevas tecnologías, para que desarrolles habilidades lingüísticas  e interculturales para tu formación profesional.\n Más información: http://www.cutonala.udg.mx/CGI]"],
+    "context_filter": "idioms"
+    },
+    {"tag": "sports_and_culture",
+    "patterns": ["¿Cómo pedir las instalaciones deportivas y culturales?", "pedir material deportivas", "pedir material cultural", "material deportivas", "material cultural", "instalaciones deportivas"],
+    "responses": ["Ingresa aquí para tener información detallada: http://www.cutonala.udg.mx/sites/default/files/adjuntos/reglamento_para_el_uso_de_las_instalaciones_deportivas_del_centro_universitario_de_tonala_.pdf "],
+    "context_filter": "sports_and_culture"
+    },
+    {"tag": "cineteca",
+    "patterns": ["¿Cuáles son los horarios de la cineteca?", "horarios cineteca", "funciones", "siguientes funciones cineteca"],
+    "responses": ["Cartelera de la CIENETECA:http://www.cutonala.udg.mx/cineclub/cartelera"],
+    "context_filter": "cineteca"
+    },
+    {"tag": "internship",
+        "patterns": ["¿Qué requisitos se necesitan para tramitar la beca de intercambio?", "intercambio", "beca intercambio", "requisitos beca intercambio", "becas intercambio"],
+        "responses": ["Puedes encontrar más información aquí: http://www.cutonala.udg.mx/servicios/servicios-academicos/unidad-becas-intercambio"],
+        "context_filter": "internship"
+    },
+    {"tag": "scholarship_students_cutonala",
+        "patterns": ["¿En cuántas becas me puedo inscribir?", "becas inscripciones", "becas", "todas las becas", "becas CUTONALÁ"],
+        "responses": ["Estas son las becas que podrías solicitar:\nApoyo alimentario: http://www.cutonala.udg.mx/becas/alimentos\nBecarios CUT http://cutonala.udg.mx/Becarios\nMovilidad http://cutonala.udg.mx/Becarios"],
+        "context_filter": "scholarship_students_cutonala"
+    },
+    {"tag": "scholarship_food",
+        "patterns": ["Apoyo alimentario", "Necesito Comida"],
+        "responses": ["Puedes solicitar un Apoyo Alimentario aquí: http://www.cutonala.udg.mx/becas/alimentos"],
+        "context_filter": "scholarship_food"
+    },
+    {"tag": "scholarship_bus",
+        "patterns": ["Información sobre Movilidad estudiantil", "becas camiones", "beca camión", "beca estudiante camión"],
+        "responses": ["Con Movilidad Estudiantil puedes solicitar un Apoyo aquí: http://cutonala.udg.mx/Becarios"],
+        "context_filter": "scholarship_bus"
+    },
+    {"tag": "social_service",
+        "patterns": ["Servicio Social", "Hacer Servicio Social", "Realizar Servicio Social", "Requerimientos Servicio Social"],
+        "responses": ["Deberás contactarte con tu Coordinador. Más información Aquí: http://www.cutonala.udg.mx/oferta-academica/ciencias-computacionales"],
+        "context_filter": "social_service"
+    },
+    {"tag": "extraordinario",
+        "patterns": ["Extraordinario", "Requisitos Extraordinario", "Derechos Extraordinario"],
+        "responses": ["A partir del CAPÍTULO V podrás encontrar la información acerca de Extraordinarios: http://www.secgral.udg.mx/sites/archivos/normatividad/general/ReglamentoGralEPAlumnos.pdf"],
+        "context_filter": "extraordinario"
+    },
+    {"tag": "credits_semester",
+        "patterns": ["¿Cuántos son el mínimo de créditos que puedo inscribir por semestre?", "Mínimos Créditos Semestre", "Inscribirme por Semestre Mínimos Créditos", "Créditos por Semestre"],
+        "responses": ["LA ADMINISTRACIÓN DE LOS PLANES DE ESTUDIO SE HARÁ EN BASE AL SISTEMA DE CRÉDITOS, DE CONFORMIDAD CON EL SIGUIENTE LINEAMIENTO: \nDEL TOTAL DE CRÉDITOS ESTABLECIDOS EN UN PLAN DE ESTUDIOS DEL NIVEL SUPERIOR\nEL NÚMERO MÍNIMO DE CRÉDITOS A CURSAR EN UN CICLO ESCOLAR SERÁ DE 30, EL PROMEDIO DE 60 Y EL MÁXIMO DE 90 CRÉDITOS.\r\nPODRÁS ENCONTRAR MAS INFORMACIÓN EN EL REGLAMENTO GENERAL DE PLANES DE ESTUDIO http://www.secgral.udg.mx/sites/archivos/normatividad/general/ReglaGPE.pdf \r\n"],
+        "context_filter": "credits_semester"
+    }
+]
+}
