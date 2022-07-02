@@ -11,4 +11,3 @@ def login_required(f):
             print("No session")
             return redirect('login')
     return wrap
-

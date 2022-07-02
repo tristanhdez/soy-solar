@@ -1,20 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask
 from apps.ingc.ingc import ingc
 from apps.guest.guest import guest
-from flask_wtf.csrf import CSRFProtect
-
+from config import configs
+import os
+#from flask_wtf.csrf import CSRFProtect
 
 
 app = Flask(__name__)
 app.register_blueprint(ingc, url_prefix="/ingc")
 app.register_blueprint(guest, url_prefix="/guest")
-app.config['SECRET_KEY'] = 'SECRET_KEY_:)'
-#app.config.update(
-#    SESSION_COOKIE_SECURE=True,
-#    SESSION_COOKIE_HTTPONLY=True,
-#    SESSION_COOKIE_SAMESITE='Lax',
-#)
-#response.set_cookie('username', 'flask', secure=True, httponly=True, samesite='Lax')
+app.config.from_object(configs[os.environ.get("FLASK_ENV", "development")])
 #csrf = CSRFProtect()
 #csrf.init_app(app)
 

@@ -20,7 +20,7 @@ def login():
 
 
 @ingc.route('/chatbot_ingc', methods=["POST"])
-#@login_required
+@login_required
 def chatbotResponse():
     if request.method == 'POST':
         the_question = request.form['question']
@@ -55,4 +55,11 @@ def verify():
         #    session.permanent = True
         #    app.permanent_session_lifetime = timedelta(minutes=120)
         #    return redirect('/solar')
+    return redirect(url_for('ingc.login'))
+
+
+@ingc.route('/logout')
+def logout():
+    session.pop('studentCode',None)
+    session.permanent = False
     return redirect(url_for('ingc.login'))
