@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ</title>
+  <link href="{{ url_for('static',filename='css/ingc/faq.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+ 
+<div class="container">
+ 
+  <h2>Preguntas Frecuentes</h2>
+ 
+  <div class="accordion">
+    <div class="accordion-item">
+      <a>¿Quién es Solar?</a>
+      <div class="content">
+        <p>Solar es un asistente virtual con Inteligencia Artificial donde podrá ayudarte a resolver las dudas comunes de los estudiantes por la falta de información y la forma de no saber cómo acercarse para tener alguna respuesta de sus dudas.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <a>¿Qué preguntas puedo realizar?</a>
+      <div class="content">
+        <p>
+          Cualquier tipo de preguntas que tengan relación con dudas en general, como pudiese ser becas, servicio social, titulación, materias, acreditación, intercambios, reglamentos, artículos, horarios, psicología, acreditación, titulación, orden de pago, tratamiento médico, etc, etc.
+        </p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <a>No tuve respuesta a mi pregunta, ¿Qué hago?</a>
+      <div class="content">
+        <p>Solar lamenta leer este tipo de comentarios. Para poder tener una retroalimentación, podrá mandarnos un correo electrónico en el apartado "Colaborar con una pregunta" para así, poder validarlo.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <a>¿Puedo colaborar en este proyecto?</a>
+      <div class="content">
+        <p>Claro que sí, la intención de este proyecto es que sea Open Source para que, las personas que no tienen ninguna experiencia laboral y necesita tener sus primeras experiencias, puede participar aquí, al igual que, mejorar cada vez más este proyecto.
+          <br>¡Pull Requests son bienvenidos!
+        </p>
+      </div>
+    </div>
+
+  </div>
+  
+</div>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/ingc/faq.js') }}"></script>
+</body>
+</html>

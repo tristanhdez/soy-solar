@@ -1,68 +1,26 @@
 {% extends 'base.html' %}
 {% block title %}
-    Home Page
+    Solar
 {% endblock %}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 {% block content %}
-<h1>Home Page guest</h1>
-<div class="container">
-    <h1>Welcome to Skolo Chatbot</h1>
-    <br>
-    <hr>
-    <br>
+<link href="{{ url_for('static',filename='css/guest/index.css') }}" rel="stylesheet" type="text/css">
 
-      <div class="row">
-        <div class="col-lg-9">
-          <input class="form-control" type="text" name="question" id="question">
-        </div>
-        <div class="col-lg-3">
-          <button class="btn btn-primary btn-block" id="submit-button">Send</button>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col">
-          <p id="response"></p>
-        </div>
-      </div>
-
+<div id="container" class="container">
+<div class="bg-chat">
+  <div id="chat" class="chat">
+      <div id="messages" class="messages"></div>
+          <input type="text" name="chat" id="question" placeholder="Escribe un Mensaje" style="border-top: none; border-left: none; border-right: none;"/>
+          <button class="send" type="button" id="btns">Enviar</button>
   </div>
-
-  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-  <script>
-
-
-    jQuery(document).ready(function() {
-
-      $("#submit-button").click(function(e) {
-        e.preventDefault();
-
-
-        $.ajax({
-            type: "POST",
-            url: "/guest/chatbot_guest",
-            data: {
-                question: $("#question").val()
-            },
-            success: function(result) {
-              $("#response").append("<br>Me: "+$("#question").val()+ "<br> Karabo: "+result.response);
-              $("#question").val("")
-            },
-            error: function(result) {
-                alert('error');
-            }
-        });
-
-
-
-      });
-
-    });
-
-
-  </script>
+</div>
+</div>
+<div class="container2">
+  <div class="options">
+    <a href="{{ url_for('guest.faq') }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-lightbulb"></i>  Preguntas Frecuentes&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <a href="{{ url_for('home') }}"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;Cerrar Sesión  </a>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/guest/index.js') }}"></script>
 {% endblock %}

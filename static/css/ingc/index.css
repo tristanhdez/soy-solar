@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Patrick+Hand&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Patrick Hand', cursive;
+}
+
+html{
+    height: 100%;
+    overflow: hidden;
+}
+
+body{ /*body's style*/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color:#282c2c;
+    height: 100%;
+    margin: 0;
+}
+
+h1{
+    text-align: center;
+    font-family: sans-serif;
+    color: #2e3e50;
+}
+h3{
+    text-align: center;
+    color: #2e3e50;
+}
+li{
+    font-size: 18px;
+    line-height: 30px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+
+.container{
+    display: grid;
+    margin-top: 70px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 70px;
+}
+
+.bg-chat{
+    margin-top: -40px;
+    width: 1120px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.solar{ /*image icon solar*/
+    width: 60px;
+    height: 50px;
+}
+
+.chat {
+    height:470px;
+    width:inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=text]{ /*Answers's textbox style*/
+    padding: 10px;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: transparent;
+    border: #f7e66b 3px solid;
+    width: 90%;
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing:0.5em;
+}
+
+input:focus{
+    outline: none;
+}
+
+input::placeholder{
+    color: #f7e66b;
+}
+
+button#btns{ /*send button*/
+    color: white;
+    margin-left: auto;
+    margin-top: -40px;
+    background-color: #f7e66b;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 30px;
+    width:80px;
+    height: 40px;
+    cursor: pointer;
+    letter-spacing:0.1em;
+}
+
+
+.messages{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 90%;
+    width: 100%;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 10px;
+    background-image: url("/static/img/wallpaper/bg-chat.png");
+    background-repeat: no-repeat;
+    background-position:cover;
+    border: #f7e66b  2px solid;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f7e66b;
+    border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(118, 131, 121);
+}
+
+#bot {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 60px;
+}
+
+#user{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 35px;
+    margin-bottom: 90px;
+}
+
+.bot {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+.bot span{
+    border-radius: 10px 10px 10px 0;
+    margin-left: 8px;
+}
+
+.avatar {/*icon solar*/
+    height: 50px;
+}
+
+span{
+    background-color: #f7e66b;
+    margin-top: -10px;
+    color: #0b0a0a;
+    word-wrap:break-word;
+    max-width: 700px;
+    font-size: 18px;
+    font-weight:300;
+    font-family: 'Open Sans', sans-serif;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+img{
+    border-radius: 50%;
+}
+
+.response {
+    display: flex;
+    align-items: center;
+    height: 25px;
+}
+
+#user span{
+    border-radius: 10px 10px 0px 10px;
+    margin-right: 4px;
+}
+
+.container2{
+    position: sticky;
+    left: 10px;
+    height: 30px;
+    bottom: 30px;
+    right: 10px;
+    width: 100%;
+    text-align: center;
+    float:none;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom:16px;
+    margin-top: 30px;
+}
+
+.container2 a{
+    color: #f7e66b;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing:0.1em;
+}
+
+.options{
+    padding-top: 6px;
+}
+
+.items{ /*STYLE for the class items*/
+    margin: center;
+}
+
+.buttonNV{ /*CLASS for the buttons navbar style*/
+    margin-top: 30px;
+    text-align: center;
+    background-color: transparent;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    color: #D397EE;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    .bg-chat{
+        width: 800px;
+        height: 550px;
+    }
+    body{
+        font-size: 12px;
+    }
+    .edit{
+        font-size: 12px;
+    }
+    .send{
+        font-size: 12px;
+    }
+    button#btns{ /*send button*/
+        width:70px;
+        height: 35px;
+    }
+    .buttonNV{
+        font-size: 10px;
+    }
+    .solar{ /*image icon solar*/
+        width: 55px;
+        height: 45px;
+    }
+    .avatar {
+        height: 45px;
+    }
+    .fish{
+        height: 45px;
+        width: 45px;
+    }
+    .container-all{
+        width: 710px;
+        left: 70px;
+        top: 100px;
+
+    }
+    .X {
+        width: 700px;
+        font-size: 14px;
+    }
+    li{
+        font-size: 14px;
+    }
+    .df{
+        width: 220px;
+    }
+    .s1{
+        width: 220px;
+    }
+    .s2{
+        width: 220px;
+    }
+    .popup{
+        max-width: 690px;
+        left: 510px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .bg-chat{
+        width: 450px;
+        height: 450px;
+    }
+    body{
+        font-size: 10px;
+    }
+    .edit{
+        font-size: 10px;
+    }
+    .send{
+        font-size: 10px;
+    }
+    button#btns{ /*send button*/
+        width: 45px;
+        height: 30px;
+    }
+    .buttonNV{
+        font-size: 8px;
+    }
+    .solar{ /*image icon solar*/
+        width: 45px;
+        height: 35px;
+    }
+    .avatar {
+        height: 35px;
+    }
+    .fish{
+        height: 35px;
+        width: 35px;
+    }
+    .container-all{
+        width: 320px;
+        left: 165px;
+        top: 110px;
+    }
+    .X {
+        width: 290px;
+        font-size: 14px;
+    }
+    li{
+        font-size: 14px;
+    }
+    .df{
+        width: 290px;
+    }
+    .s1{
+        width: 290px;
+    }
+    .s2{
+        width: 290px;
+    }
+    .popup{
+        max-width: 290px;
+        left: 230px;
+    }
+
+}
+
+@media only screen and (max-width: 540px) {
+    .bg-chat{
+        width: 340px;
+        height: 340px;
+    }
+    body{
+        font-size: 6px;
+    }
+    .edit{
+        font-size: 8px;
+    }
+    .send{
+        font-size: 8px;
+    }
+    button#btns{ /*send button*/
+        width: 35px;
+        height: 25px;
+    }
+    .buttonNV{
+        font-size: 6px;
+    }
+    .solar{ /*image icon solar*/
+        width: 35px;
+        height: 25px;
+    }
+    .avatar {
+        height: 25px;
+    }
+    .fish{
+        height: 25px;
+        width: 25px;
+    }
+    .container-all{
+        width: 270px;
+        left: 50px;
+        top: 120px;
+    }
+    .X {
+        width: 250px;
+        font-size: 12px;
+    }
+    li{
+        font-size: 12px;
+    }
+    .df{
+        width: 250px;
+    }
+    .s1{
+        width: 250px;
+    }
+    .s2{
+        width: 250px;
+    }
+    .popup{
+        max-width: 250px;
+        left: 190px;
+    }
+
+}

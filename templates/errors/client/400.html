@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+    Solar
+{% endblock %}
+{% block content %}
+<head>
+  <link href="{{ url_for('static',filename='css/errors/client/400.css') }}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="mainbox">
+      <div class="err">4</div>
+      <i class="far fa-question-circle fa-spin"></i>
+      <div class="err2"><i class="far fa-question-circle fa-spin"></i></div>
+      <div class="msg">
+          La petición que está llamando no ha funcionado bien (Bad Request).
+          Si persiste el problema, favor de contactarse con soporte técnico.
+          <p>Regresar al <a href="{{ url_for('home') }}">inicio</a> e intente nuevamente.</p></div>
+        </div>
+{% endblock %}
