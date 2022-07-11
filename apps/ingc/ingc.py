@@ -1,9 +1,9 @@
-from flask import Blueprint, redirect, render_template, jsonify, request, session, url_for
+from flask import Blueprint, redirect, render_template, request, session, url_for
 from datetime import timedelta
-import apps.ingc.processor_ingc as processor_ingc
 import re
 from .decorators import *
 from ..utils.database import *
+from .controlator import *
 
 
 ingc = Blueprint("ingc",__name__, static_folder="static", template_folder="templates")
@@ -32,6 +32,12 @@ def contact_with_us():
     return render_template('ingc/contact_with_us.html')
 
 
+@ingc.route("/keywords")
+@login_required
+def keywords():
+    return render_template('ingc/keywords.html')
+
+
 @ingc.route("/suggest_question")
 @login_required
 def suggest_question():
@@ -41,67 +47,45 @@ def suggest_question():
 @ingc.route('/sending_email_contact', methods=["POST"])
 @login_required
 def sending_email_contact():
-    name = request.form['name']
-    email = request.form['email']
-    message = request.form['message']
-    if request.method == 'POST' and name and email and message:
-        return "ACTUALMENTE ESTAMOS EN MANTENIMIENTO"
+    return "ACTUALMENTE ESTAMOS EN MANTENIMIENTO"
 
 
 @ingc.route('/sending_email_suggestion', methods=["POST"])
 @login_required
 def sending_email_suggestion():
-    name = request.form['name']
-    email = request.form['email']
-    message = request.form['message']
-    if request.method == 'POST' and name and email and message:
-        return "ACTUALMENTE ESTAMOS EN MANTENIMIENTO"
+    return "ACTUALMENTE ESTAMOS EN MANTENIMIENTO"
 
 
 @ingc.route('/chatbot_ingc', methods=["POST"])
 @login_required
 def chatbotResponse():
-    if request.method == 'POST':
-        the_question = request.form['question']
-        if re.match("^[0-9]{9}$", the_question):
-            connection = mysql.connect()
-            cursor=connection.cursor()
-            row = cursor.execute("SELECT tutors.name, tutors.email from tutors join students on tutors.id_tutor = students.id_tutor where students.code = '"+the_question+"'")
-            connection.commit()
-            data = cursor.fetchall()
-            if row == 1:
-                result = " ".join(str(x) for x in data)
-                result = result.replace("(","").replace(")","").replace("'","").replace("\\n"," ").replace("\\r"," ").replace("\\"," ")
-                result = result.replace(","," ")
+    the_question = request.form['question']
+    if request.method == 'POST' and the_question:
+        if re.match("^[0-9]{9}$[ ]{0}", the_question):
+            answer = find_tutor(the_question)
+            if type(answer) is tuple:
+                result = delete_special_characters(answer)
                 return result
-        response = processor_ingc.chatbot_response(the_question)
-    return jsonify({"response": response })
+            return answer
+        else:
+            answer = find_answer(the_question)
+            if type(answer) is tuple:
+                result = delete_special_characters(answer)
+                return result
+    return answer
 
 
 @ingc.route('/verify', methods=["POST"])
 def verify():
     studentCode = request.form['code']
     if request.method == 'POST' and studentCode and re.match("^[0-9]{9}$[ ]{0}", studentCode):
-        connection = mysql.connect()
-        cursor=connection.cursor()
-        cursor.execute("SELECT code FROM students WHERE code='"+studentCode+"'")
-        connection.commit()
-        data = cursor.fetchall()
-        result = " ".join(str(x) for x in data)
-        result = result.replace("(","").replace(")","").replace(","," ").replace(" ","")
+        result = validate_student(studentCode)
         if studentCode == result:
-            cursor.execute("SELECT name FROM students WHERE code='"+studentCode+"'")
-            connection.commit()
-            name = cursor.fetchall()
-            cursor.close()
-            value = " ".join(str(x) for x in name)
-            value = value.replace("(","").replace(")","").replace(","," ").replace("'","")
             session['studentCode'] = studentCode
             session.permanent = True
             ingc.permanent_session_lifetime = timedelta(minutes=120)
             return redirect(url_for('ingc.index'))
     return redirect(url_for('ingc.login'))
-
 
 
 @ingc.route('/logout')
@@ -144,6 +128,7 @@ def page_gone(error):
 @ingc.errorhandler(500)
 def internal_error(error):
     return render_template('errors/server/500.html'), 500
+
 
 @ingc.errorhandler(505)
 def http_not_compatible(error):
