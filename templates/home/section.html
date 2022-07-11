@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quién eres?</title>
+  <link href="{{ url_for('static',filename='css/home/section.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <h1 style="font-weight: 200;">¿Quién eres?</h1>
+      </div>
+      <div class="row1-container">
+        <div class="box box-down cyan">
+            <a href="{{ url_for('student.login') }}" style="text-decoration: none;"><h2>Estudiante</h2></a>
+            <p>No formo parte de CUTONALÁ pero me gustaría tener información</p>
+            <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="">
+            </div>
+    
+        <div class="box box-down blue">
+            <a href="{{ url_for('guest.index') }}" style="text-decoration: none;"><h2>Invitado</h2></a>
+          <p>Formo parte de CUTONALÁ. <br> Soy Estudiante.</p>
+          <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
