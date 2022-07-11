@@ -5,7 +5,7 @@ jQuery(document).ready(function() {
       e.preventDefault();
       $.ajax({
           type: "POST",
-          url: "/ingc/chatbot_ingc",
+          url: "/student/chatbot_student",
           data: {
               question: $("#question").val().replace(/</g, "&lt;").
               replace(/>/g, "&gt;").replace(/'/g, "&#39;")

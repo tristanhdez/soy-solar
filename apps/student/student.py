@@ -6,57 +6,57 @@ from ..utils.database import *
 from .controlator import *
 
 
-ingc = Blueprint("ingc",__name__, static_folder="static", template_folder="templates")
+student = Blueprint("student",__name__, static_folder="static", template_folder="templates")
 
 
-@ingc.route('/')
+@student.route('/')
 @login_required
 def index():
-    return render_template('ingc/index.html')
+    return render_template('student/index.html')
 
 
-@ingc.route("/login")
+@student.route("/login")
 def login():
-    return render_template('ingc/login.html')
+    return render_template('student/login.html')
 
 
-@ingc.route("/faq")
+@student.route("/faq")
 @login_required
 def faq():
-    return render_template('ingc/faq.html')
+    return render_template('student/faq.html')
 
 
-@ingc.route("/contact_with_us")
+@student.route("/contact_with_us")
 @login_required
 def contact_with_us():
-    return render_template('ingc/contact_with_us.html')
+    return render_template('student/contact_with_us.html')
 
 
-@ingc.route("/keywords")
+@student.route("/keywords")
 @login_required
 def keywords():
-    return render_template('ingc/keywords.html')
+    return render_template('student/keywords.html')
 
 
-@ingc.route("/suggest_question")
+@student.route("/suggest_question")
 @login_required
 def suggest_question():
-    return render_template('ingc/suggest_question.html')
+    return render_template('student/suggest_question.html')
 
 
-@ingc.route('/sending_email_contact', methods=["POST"])
+@student.route('/sending_email_contact', methods=["POST"])
 @login_required
 def sending_email_contact():
     return "ACTUALMENTE ESTAMOS EN MANTENIMIENTO"
 
 
-@ingc.route('/sending_email_suggestion', methods=["POST"])
+@student.route('/sending_email_suggestion', methods=["POST"])
 @login_required
 def sending_email_suggestion():
     return "ACTUALMENTE ESTAMOS EN MANTENIMIENTO"
 
 
-@ingc.route('/chatbot_ingc', methods=["POST"])
+@student.route('/chatbot_student', methods=["POST"])
 @login_required
 def chatbotResponse():
     the_question = request.form['question']
@@ -75,7 +75,7 @@ def chatbotResponse():
     return answer
 
 
-@ingc.route('/verify', methods=["POST"])
+@student.route('/verify', methods=["POST"])
 def verify():
     studentCode = request.form['code']
     if request.method == 'POST' and studentCode and re.match("^[0-9]{9}$[ ]{0}", studentCode):
@@ -83,53 +83,53 @@ def verify():
         if studentCode == result:
             session['studentCode'] = studentCode
             session.permanent = True
-            ingc.permanent_session_lifetime = timedelta(minutes=120)
-            return redirect(url_for('ingc.index'))
-    return redirect(url_for('ingc.login'))
+            student.permanent_session_lifetime = timedelta(minutes=120)
+            return redirect(url_for('student.index'))
+    return redirect(url_for('student.login'))
 
 
-@ingc.route('/logout')
+@student.route('/logout')
 def logout():
     session.pop('studentCode',None)
     session.permanent = False
-    return redirect(url_for('ingc.login'))
+    return redirect(url_for('student.login'))
 
 
-@ingc.errorhandler(400)
+@student.errorhandler(400)
 def handle_bad_request(e):
     return render_template('errors/client/400.html'), 400
 
 
-@ingc.errorhandler(403)
+@student.errorhandler(403)
 def handle_bad_request(e):
     return render_template('errors/client/400.html'), 403
 
 
-@ingc.errorhandler(404)
+@student.errorhandler(404)
 def not_found(self):
     return render_template('errors/client/404.html'), 404
 
 
-@ingc.errorhandler(405)
+@student.errorhandler(405)
 def method_not_found(error):
     return render_template('errors/client/405.html'), 405
 
 
-@ingc.errorhandler(408)
+@student.errorhandler(408)
 def request_timeout(error):
     return render_template('errors/client/408.html'), 408
 
 
-@ingc.errorhandler(410)
+@student.errorhandler(410)
 def page_gone(error):
     return render_template('errors/client/410.html'), 410
 
 
-@ingc.errorhandler(500)
+@student.errorhandler(500)
 def internal_error(error):
     return render_template('errors/server/500.html'), 500
 
 
-@ingc.errorhandler(505)
+@student.errorhandler(505)
 def http_not_compatible(error):
     return render_template('errors/server/500.html'), 505
