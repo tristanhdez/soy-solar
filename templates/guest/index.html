@@ -8,7 +8,13 @@
 <div id="container" class="container">
 <div class="bg-chat">
   <div id="chat" class="chat">
-      <div id="messages" class="messages"></div>
+      <div id="messages" class="messages">
+        <div id="bot" class="bot response">
+          <img src="/static/img/icons/solar.png" class="avatar">
+          <span>¡Hola! Soy Solar y seré tu asistente virtual. <br>
+            Si eres nuev@ y no tienes idea de qué preguntar y cómo, puedes checar en la sección "Palabras Clave"</span>
+        </div>
+      </div>
           <input type="text" name="chat" id="question" placeholder="Escribe un Mensaje" style="border-top: none; border-left: none; border-right: none;"/>
           <button class="send" type="button" id="btns">Enviar</button>
   </div>
@@ -17,6 +23,7 @@
 <div class="container2">
   <div class="options">
     <a href="{{ url_for('guest.faq') }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-lightbulb"></i>  Preguntas Frecuentes&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <a href="{{ url_for('guest.keywords') }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-lightbulb"></i>  Palabras Clave&nbsp;&nbsp;&nbsp;&nbsp;</a>
     <a href="{{ url_for('home') }}"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;Cerrar Sesión  </a>
   </div>
 </div>

@@ -1,6 +1,5 @@
 "use strict";
 
-
 jQuery(document).ready(function() {
     $("#btns").click(function(e){
       e.preventDefault();
@@ -8,7 +7,12 @@ jQuery(document).ready(function() {
           type: "POST",
           url: "/guest/chatbot_guest",
           data: {
-              question: $("#question").val().replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&#34;")
+              question: $("#question").val().replace(/</g, "&lt;").
+              replace(/>/g, "&gt;").replace(/'/g, "&#39;")
+              .replace(/"/g, "&#34;").normalize("NFD").toLowerCase()
+              .replace(/\s+/g,"") //replace whitespaces.
+              .replace(/[\u0300-\u036f]/g, "") //replace accents.
+              .replace(/[!@#$%^&*?¿,.;:]/g,"") //replace invalid characters.
           },
           success: function(result) {
                 let userDiv = document.createElement("div");
@@ -30,7 +34,7 @@ jQuery(document).ready(function() {
                 botDiv.appendChild(botImg);
                 botDiv.appendChild(botText);
                 setTimeout(()=>{
-                    botText.innerText = `${result.response}`;
+                    botText.innerText = `${result}`;
                 },500)
                 $("#question").val("")
           },

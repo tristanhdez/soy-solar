@@ -27,13 +27,6 @@ h3{
     text-align: center;
     color: #2e3e50;
 }
-li{
-    font-size: 18px;
-    line-height: 30px;
-    text-align: justify;
-    letter-spacing: 1px;
-    font-family: sans-serif;
-}
 
 .container{
     display: grid;
@@ -163,17 +156,18 @@ button#btns{ /*send button*/
 }
 
 .bot span{
+    margin-top: 30px;
     border-radius: 10px 10px 10px 0;
     margin-left: 8px;
 }
 
 .avatar {/*icon solar*/
+    margin-top: 30px;
     height: 50px;
 }
 
 span{
     background-color: #f7e66b;
-    margin-top: -10px;
     color: #0b0a0a;
     word-wrap:break-word;
     max-width: 700px;
@@ -273,32 +267,6 @@ img{
         height: 45px;
         width: 45px;
     }
-    .container-all{
-        width: 710px;
-        left: 70px;
-        top: 100px;
-
-    }
-    .X {
-        width: 700px;
-        font-size: 14px;
-    }
-    li{
-        font-size: 14px;
-    }
-    .df{
-        width: 220px;
-    }
-    .s1{
-        width: 220px;
-    }
-    .s2{
-        width: 220px;
-    }
-    .popup{
-        max-width: 690px;
-        left: 510px;
-    }
 }
 @media only screen and (max-width: 768px) {
     .bg-chat{
@@ -331,31 +299,6 @@ img{
     .fish{
         height: 35px;
         width: 35px;
-    }
-    .container-all{
-        width: 320px;
-        left: 165px;
-        top: 110px;
-    }
-    .X {
-        width: 290px;
-        font-size: 14px;
-    }
-    li{
-        font-size: 14px;
-    }
-    .df{
-        width: 290px;
-    }
-    .s1{
-        width: 290px;
-    }
-    .s2{
-        width: 290px;
-    }
-    .popup{
-        max-width: 290px;
-        left: 230px;
     }
 
 }
@@ -391,31 +334,6 @@ img{
     .fish{
         height: 25px;
         width: 25px;
-    }
-    .container-all{
-        width: 270px;
-        left: 50px;
-        top: 120px;
-    }
-    .X {
-        width: 250px;
-        font-size: 12px;
-    }
-    li{
-        font-size: 12px;
-    }
-    .df{
-        width: 250px;
-    }
-    .s1{
-        width: 250px;
-    }
-    .s2{
-        width: 250px;
-    }
-    .popup{
-        max-width: 250px;
-        left: 190px;
     }
 
 }
