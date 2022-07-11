@@ -15,12 +15,8 @@ class Config:
     MYSQL_DATABASE_HOST = 'localhost'
     MYSQL_DATABASE_USER = 'root'
     MYSQL_DATABASE_PASSWORD = 'Password123*'
-    MYSQL_DATABASE_DB= 'solar'
+    MYSQL_DATABASE_DB= 'soy-solar'
     
-    MAIL_SERVER='smtp.gmail.com'
-    MAIL_PORT= 465
-    MAIL_USERNAME = 'solarbotsupp@gmail.com'
-    MAIL_PASSWORD = 'rljfpaheyxwmroop'
     #MAIL_USE_TLS = False
     MAIL_USE_SSL = True
     #CSRF_ENABLED = True

@@ -3,7 +3,6 @@ from apps.ingc.ingc import ingc
 from apps.guest.guest import guest
 from config import configs
 from apps.utils.database import *
-from flask_mail import Mail, Message
 import os
 #from flask_wtf.csrf import CSRFProtect
 
@@ -13,7 +12,6 @@ app.register_blueprint(ingc, url_prefix="/ingc")
 app.register_blueprint(guest, url_prefix="/guest")
 app.config.from_object(configs[os.environ.get("FLASK_ENV", "development")])
 mysql.init_app(app)
-mail = Mail(app)
 #csrf = CSRFProtect()
 #csrf.init_app(app)
 
