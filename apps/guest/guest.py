@@ -1,23 +1,24 @@
-from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
-import apps.guest.processor_guest as processor_guest
-from datetime import timedelta
+from flask import Blueprint, render_template, request, session, redirect, url_for
+from .operator import *
 
 
 guest = Blueprint("guest",__name__, static_folder="static", template_folder="templates")
 
 
-@guest.route("/home")
 @guest.route("/")
-def home():
+def index():
     return render_template('guest/index.html')
 
 
 @guest.route('/chatbot_guest', methods=["POST"])
-def chatbot_guest():
-    if request.method == 'POST':
-        the_question = request.form['question']
-        response = processor_guest.chatbot_response(the_question)
-    return jsonify({"response": response })
+def chatbotResponse():
+    the_question = request.form['question']
+    if request.method == 'POST' and the_question:
+            answer = find_answer(the_question)
+            if type(answer) is tuple:
+                result = delete_special_characters(answer)
+                return result
+    return answer
 
 
 @guest.route("/faq")
@@ -25,11 +26,9 @@ def faq():
     return render_template('guest/faq.html')
 
 
-@guest.route('/logout')
-def logout():
-    session.pop('studentCode',None)
-    session.permanent = False
-    return redirect(url_for('home'))
+@guest.route("/keywords")
+def keywords():
+    return render_template('guest/keywords.html')
 
 
 @guest.errorhandler(400)
@@ -65,6 +64,7 @@ def page_gone(error):
 @guest.errorhandler(500)
 def internal_error(error):
     return render_template('errors/server/500.html'), 500
+
 
 @guest.errorhandler(505)
 def http_not_compatible(error):
