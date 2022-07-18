@@ -5,19 +5,17 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    overflow:hidden;
 }
-/* End Global rules */
 
-/* Start body rules */
 body {
-    background-color: #282c2c;
+    background-image: linear-gradient(45deg, #7bf1a8 37.47%, #bad7f2 92.82%);
+    background-image: linear-gradient(to top, #7bf1a8 0%, #bad7f2 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 
-
-/* End body rules */
-
-/* Start form  attributes */
 .container {
     font-family: 'Caveat', cursive;
     width: 450px;
@@ -25,36 +23,29 @@ body {
     height: auto;
     border-radius: 10px;
     margin: 6% auto;
-    box-shadow: 0 9px 50px hsla(0, 0%, 13%, 0.31);
+    box-shadow: 0 12px 30px hsla(0, 0%, 0%, 0.697);
     padding: 2%;
-    background-image: linear-gradient(-225deg, #7ee2e7 50%, #7af398 50%);
-}
-/* form Container */
-.con {
-    display: -webkit-flex;
-    display: flex;
-  
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-  
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-  
-      margin: 0 auto;
+    background: linear-gradient(80deg, #bad7f237 40.47%, #7bf1a8 92.82%);
 }
 
-/* the header form form */
+.con {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
 header {
     font-family: 'Patrick Hand', cursive;
     margin: 2% auto 10% auto;
     text-align: center;
 }
-/* Login title form form */
+
 header h2 {
     font-size: 230%;
-    color: #3e403f;
+    color: #333;
 }
-/*  A welcome message or an explanation of the login form */
+
 header p {letter-spacing: 0.05em;}
 
 
@@ -63,52 +54,48 @@ header p {letter-spacing: 0.05em;}
     height: 100px;
 }
 
-/* //////////////////////////////////////////// */
-/* //////////////////////////////////////////// */
 
 
 .input-item {
     background: #fff;
     color: #333;
-    padding: 14.5px 0px 15px 9px;
+    padding: 14.5px 0px 15px 10px;
     border-radius: 5px 0px 0px 5px;
 }
 
 
 
 
-/* inputs form  */
+
 input[class="form-input"]{
     width: 240px;
     height: 50px;
     padding: 15px;
     font-size: 16px;
-    color: #5E6472;
+    font-weight: bold;
+    color: #333;
     outline: none;
     border: none;
     border-radius: 0px 5px 5px 0px;
     transition: 0.2s linear;
     
 }
-input[id="txt-input"] {width: 270px;}
-/* focus  */
+input[id="txt-input"] {width: 250px;}
+
+
 input:focus {
     transform: translateX(-2px);
     border-radius: 5px;
 }
 
-/* //////////////////////////////////////////// */
-/* //////////////////////////////////////////// */
 
-/* input[type="text"] {min-width: 250px;} */
-/* buttons  */
 button {
     display: inline-block;
-    color: #252537;
-  
+    color: #333;
+
     width: 280px;
     height: 50px;
-  
+    font-weight: bold;
     padding: 0 20px;
     background: #fff;
     border-radius: 5px;
@@ -123,7 +110,7 @@ button {
     margin: 7% auto;
     letter-spacing: 0.05em;
 }
-/* Submits */
+
 .submits {
     width: 100%;
     display: inline-block;
@@ -131,28 +118,66 @@ button {
     margin-left: 2%;
 }
 
-/*       Forgot Password button FAF3DD  */
+
 .frgt-pass {
     background: transparent;
     padding-bottom: 30px;
 }
 
 
-/* buttons hover */
+
 button:hover {
     transform: translatey(3px);
     box-shadow: none;
 }
 
-/* buttons hover Animation */
+
 button:hover {
     animation: ani9 0.4s ease-in-out infinite alternate;
 }
+
+
 @keyframes ani9 {
     0% {
         transform: translateY(3px);
     }
     100% {
         transform: translateY(5px);
+    }
+}
+
+@media (max-width: 500px){
+    .container {
+        width: 400px;
+        min-height: 400px;
+        height: auto;
+        box-shadow: 0 12px 12px hsla(0, 0%, 0%, 0.419);
+    }
+    .overlay{
+        padding-top: 50px;
+    }
+    
+}
+
+@media (max-width: 435px){
+    .container {
+        width: 350px;
+        min-height: 350px;
+        height: auto;
+    }
+    .overlay{
+        padding-top: 50px;
+    }
+}
+
+
+@media (max-width: 400px){
+    .container {
+        width: 330px;
+        min-height: 330px;
+        height: auto;
+    }
+    .overlay{
+        padding-top: 70px;
     }
 }
