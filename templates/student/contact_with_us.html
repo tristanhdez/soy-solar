@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}
+    Solar
+{% endblock %}
+{% block content %}
 <link href="{{ url_for('static',filename='css/student/contact_with_us.css') }}" rel="stylesheet" type="text/css">
 <form action="{{ url_for('student.sending_email_contact') }}" class="form" method="post">
     <h2>CONTÁCTATE</h2>
@@ -9,3 +14,4 @@
       <span class="fa fa-envelope-o"></span> solarbotsupp@gmail.com
     </div>
 </form>
+{% endblock %}
