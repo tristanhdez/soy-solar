@@ -60,18 +60,19 @@ def sending_email_suggestion():
 @login_required
 def chatbotResponse():
     the_question = request.form['question']
+    print(the_question)
     if request.method == 'POST' and the_question:
+        print(the_question)
         if re.match("^[0-9]{9}$[ ]{0}", the_question):
             answer = find_tutor(the_question)
             if type(answer) is tuple:
                 result = delete_special_characters(answer)
                 return result
             return answer
-        else:
-            answer = find_answer(the_question)
-            if type(answer) is tuple:
-                result = delete_special_characters(answer)
-                return result
+    answer = find_answer(the_question)
+    if type(answer) is tuple:
+        result = delete_special_characters(answer)
+        return result
     return answer
 
 
