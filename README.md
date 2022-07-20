@@ -9,10 +9,12 @@ tutoring department at Universidad de Guadalajara CUTONALÁ answering common que
 
 If you don't know how to contribute, you will do your first contribution [here](https://github.com/firstcontributions/first-contributions)
 
+When you feel more confortable, now you can contribute with us!
+
 If you want to contribute please, [check here](https://github.com/tristanhdez/soy-solar/blob/master/CONTRIBUTING.md)
 
 
-### Branches
+## Branches
 
 * Master: The Main Branch.
 * Bugfix: The Actual issues.
