@@ -60,9 +60,7 @@ def sending_email_suggestion():
 @login_required
 def chatbotResponse():
     the_question = request.form['question']
-    print(the_question)
     if request.method == 'POST' and the_question:
-        print(the_question)
         if re.match("^[0-9]{9}$[ ]{0}", the_question):
             answer = find_tutor(the_question)
             if type(answer) is tuple:
@@ -93,7 +91,7 @@ def verify():
 def logout():
     session.pop('studentCode',None)
     session.permanent = False
-    return redirect(url_for('student.login'))
+    return redirect(url_for('home.index'))
 
 
 @student.errorhandler(400)

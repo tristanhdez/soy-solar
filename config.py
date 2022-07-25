@@ -14,8 +14,8 @@ class Config:
     TEMPLATES_FOLDER = 'templates'
     MYSQL_DATABASE_HOST = 'localhost'
     MYSQL_DATABASE_USER = 'root'
-    MYSQL_DATABASE_PASSWORD = ''
-    MYSQL_DATABASE_DB= ''
+    MYSQL_DATABASE_PASSWORD = 'Password123*'
+    MYSQL_DATABASE_DB= 'soy-solar'
 
 
 class ProdConfig(Config):

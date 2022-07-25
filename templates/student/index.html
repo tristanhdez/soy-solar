@@ -3,47 +3,8 @@
     Solar
 {% endblock %}
 {% block content %}
-<link href="{{ url_for('static',filename='css/student/index.css') }}" rel="stylesheet" type="text/css">
-<!--
-<div id="container" class="container">
-<div class="bg-chat">
-	<div id="chat" class="chat">
-		<div id="messages" class="messages">
-			<div id="bot" class="bot response">
-				<img src="/static/img/icons/solar.png" class="avatar">
-				<span>¡Hola! Soy Solar y seré tu asistente virtual. <br>
-				Si eres nuev@ y no tienes idea de qué preguntar y cómo, puedes checar en la sección "Palabras Clave"</span>
-			</div>
-		</div>
-		<div class="send-message">
-			<div class="items">
-				<input type="text" name="chat" id="question" placeholder="Escribe un Mensaje" style="border-top: none; border-left: none; border-right: none;"/>
-				<button class="send" type="button" id="btns">Enviar</button>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
-<div class="container2">
-  <div class="options">
-    <a href="{{ url_for('student.faq') }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-lightbulb"></i>  Preguntas Frecuentes&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <a href="{{ url_for('student.keywords') }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-lightbulb"></i>  Palabras Clave&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <a href="{{ url_for('student.contact_with_us') }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-lightbulb"></i>  ¡Contáctate con Nosotros!&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <a href="{{ url_for('student.suggest_question') }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-lightbulb"></i>  ¡Colabora una pregunta!&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    <a href="{{ url_for('student.logout') }}"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
-  </div>
-</div>
-<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="{{ url_for('static', filename='js/student/index.js') }}"></script>
--->
-
- 
- 
-  
+<link href="{{ url_for('static',filename='css/student/index.css') }}" rel="stylesheet" type="text/css">   
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-   
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css'>
 
   
@@ -62,23 +23,23 @@
   </div>
   <div class="message-box">
     <textarea type="text" class="message-input" id="question" placeholder="Escribe un mensaje..."></textarea>
-    <button type="submit" class="message-submit">Enviar</button>
+    <button type="submit" class="message-submit"> <ion-icon name="send"></ion-icon></button>
   </div>
 
 </div>
 
 <div class="options-container">
 	<div class="options">
-		<a href="{{ url_for('student.faq') }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-lightbulb"></i>  Preguntas Frecuentes</a>
-		<a href="{{ url_for('student.keywords') }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-lightbulb"></i>  Palabras Clave</a>
-		<a href="{{ url_for('student.contact_with_us') }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-lightbulb"></i>  ¡Contáctate con Nosotros!</a>
-		<a href="{{ url_for('student.suggest_question') }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-lightbulb"></i>  ¡Colabora una pregunta!</a>
-		<a href="{{ url_for('student.logout') }}"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
+		<a href="{{ url_for('student.faq') }}" target="_blank" rel="noopener noreferrer"><ion-icon name="information-circle"></ion-icon>Preguntas Frecuentes</a>
+		<a href="{{ url_for('student.keywords') }}" target="_blank" rel="noopener noreferrer"><ion-icon name="bulb"></ion-icon>Palabras Clave</a>
+		<a href="{{ url_for('student.contact_with_us') }}" target="_blank" rel="noopener noreferrer"><ion-icon name="mail"></ion-icon> ¡Contáctate con Nosotros!</a>
+		<a href="{{ url_for('student.suggest_question') }}" target="_blank" rel="noopener noreferrer"><ion-icon name="chatbubbles"></ion-icon> ¡Colabora una pregunta!</a>
+		<a href="{{ url_for('student.logout') }}"><ion-icon name="log-out"></ion-icon>Cerrar Sesión</a>
 	</div>
 </div>
 
 <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-<script src='{{ url_for('static', filename='js/jquery.mCustomScrollbar.contact.min.js') }}'></script>
+<script src="{{ url_for('static', filename='js/jquery.mCustomScrollbar.contact.min.js') }}""></script>
 <script src="{{ url_for('static', filename='js/student/index.js') }}"></script>
 
  

@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from .operator import *
+from .controlator import *
 
 
 guest = Blueprint("guest",__name__, static_folder="static", template_folder="templates")
@@ -10,16 +10,16 @@ def index():
     return render_template('guest/index.html')
 
 
-@guest.route('/chatbot_guest', methods=["POST"])
+@guest.route('/chatbot_student', methods=["POST"])
 def chatbotResponse():
     the_question = request.form['question']
     if request.method == 'POST' and the_question:
-            answer = find_answer(the_question)
-            if type(answer) is tuple:
-                result = delete_special_characters(answer)
-                return result
+        answer = find_answer(the_question)
+    if type(answer) is tuple:
+        result = delete_special_characters(answer)
+        return result
     return answer
-
+    
 
 @guest.route("/faq")
 def faq():
@@ -37,12 +37,12 @@ def handle_bad_request(e):
 
 
 @guest.errorhandler(403)
-def handle_bad_request(e):
+def handle_bad_request(error):
     return render_template('errors/client/400.html'), 403
 
 
 @guest.errorhandler(404)
-def not_found(self):
+def not_found(error):
     return render_template('errors/client/404.html'), 404
 
 
