@@ -14,10 +14,21 @@ When you feel more confortable, now you can contribute with us!
 If you want to contribute please, [check here](https://github.com/tristanhdez/soy-solar/blob/master/CONTRIBUTING.md)
 
 
+## Features
+
+* New UI Design
+* Working with relational database management systems (RDBMS)
+* New Solar Designs
+
+## Next Features
+
+* Solar with Neuronal Network (see on [Version_2](https://github.com/tristanhdez/soy-solar/tree/version_2) Branch)
+
+
 ## Branches
 
-* Master: The Main Branch.
+* [Master](https://github.com/tristanhdez/soy-solar/tree/master): The Main Branch.
 * Bugfix: The Actual issues.
-* NextVersion: The Next Version Branch with Neural Network.
+* [Version_2](https://github.com/tristanhdez/soy-solar/tree/version_2): The Next Version Branch with Neural Network.
 
 
