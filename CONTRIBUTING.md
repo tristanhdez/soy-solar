@@ -60,4 +60,4 @@ Email: Juanito69@gmail.com
 Career: INGC
 ```
 
-You can use Fake data and insert in the Database, for example you can use [Faker](https://github.com/tristanhdez/faker)
+You can use Fake data and insert in the Database, for example you can use [Faker](https://github.com/joke2k/faker)
