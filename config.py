@@ -19,30 +19,35 @@ class Config:
 
 
 class ProdConfig(Config):
-    FLASK_ENV = 'production'
+    FLASK_DEBUG = 'production'
     DEBUG = False
     TESTING = False
     DATABASE_URI = os.environ.get('PROD_DATABASE_URI')
 
+
 class StagingConfig(Config):
-    FLASK_ENV = 'stating'
+    FLASK_DEBUG = 'stating'
     DEVELOPMENT = True
     DEBUG = True
 
-#export FLASK_ENV=development
+
+#export FLASK_DEBUG=development
+#FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead
 class DevConfig(Config):
-    FLASK_ENV = 'development'
+    FLASK_DEBUG = 'development'
     DEBUG = True
     TESTING = True
     DATABASE_URI = os.environ.get('DEV_DATABASE_URI')
 
+
 class TestingConfig(Config):
-    FLASK_ENV = 'testing'
+    FLASK_DEBUG = 'testing'
     TESTING = True
 
+
 configs = {
-    "development": DevConfig, 
-    "production": ProdConfig, 
-    "stating":StagingConfig,
-    "testing":TestingConfig
+    "development": DevConfig,
+    "production": ProdConfig,
+    "stating": StagingConfig,
+    "testing": TestingConfig
 }
