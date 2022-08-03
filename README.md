@@ -31,4 +31,6 @@ If you want to contribute please, [check here](https://github.com/tristanhdez/so
 * Bugfix: The Actual issues.
 * [Version_2](https://github.com/tristanhdez/soy-solar/tree/version_2): The Next Version Branch with Neural Network.
 
+# NOTE
 
+The Solar Project actually is not shared for CUTONALÁ for testing reasons, only is sharing for people who's testing our project.
