@@ -41,3 +41,23 @@ Remember create your `.env`:
 ```
 SECRET_KEY="YOUR_SUPER_SECRET_KEY"
 ```
+
+To join like `.env` please, take in consideration the next credentials:
+
+Student:
+```
+Name: Tristán Pérez Pérez
+Code: 000000000
+Career: INGC
+Email: tristan@gmail.com
+Tutor: Juan Perez
+```
+
+Tutor:
+```
+Name: Juan Pérez El Tutor
+Email: Juanito69@gmail.com
+Career: INGC
+```
+
+You can use Fake data and insert in the Database, for example you can use [Faker](https://github.com/tristanhdez/faker)
