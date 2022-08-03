@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request
-from .controlator import *
+from ..utils.clean_str import *
+from ..utils.solar import *
 
 
 guest = Blueprint("guest",__name__, static_folder="static", template_folder="templates")
@@ -14,12 +15,13 @@ def index():
 def chatbotResponse():
     the_question = request.form['question']
     if request.method == 'POST' and the_question:
-        answer = find_answer(the_question)
-    if type(answer) is tuple:
-        result = delete_special_characters(answer)
+        answer = Question(the_question)
+        temp = answer.find_answer()
+        result = Clean(temp)
+        result = result.cleaned()
         return result
-    return answer
-    
+    return temp
+
 
 @guest.route("/faq")
 def faq():
