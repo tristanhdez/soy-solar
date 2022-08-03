@@ -23,7 +23,7 @@ If you want to contribute please, [check here](https://github.com/tristanhdez/so
 ## Next Features
 
 * Solar with Neuronal Network (see on [Version_2](https://github.com/tristanhdez/soy-solar/tree/version_2) Branch)
-
+* Improve UI "Palabras Clave" Design
 
 ## Branches
 
