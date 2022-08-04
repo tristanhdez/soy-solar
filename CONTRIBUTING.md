@@ -23,7 +23,6 @@ This is the easier way to start with our project:
 ```
 $ pip install -r requirements.txt
 $ export FLASK_DEBUG=development
-$ python3 main.py
 ```
 
 ## Database Configuration
@@ -42,9 +41,12 @@ Remember create your `.env`:
 SECRET_KEY="YOUR_SUPER_SECRET_KEY"
 ```
 
-To join like `.env` please, take in consideration the next credentials:
+### Credentials
+
+Take in consideration the next data by default on database template `soy-solar-template` :
 
 Student:
+
 ```
 Name: Tristán Pérez Pérez
 Code: 000000000
@@ -54,10 +56,11 @@ Tutor: Juan Perez
 ```
 
 Tutor:
+
 ```
 Name: Juan Pérez El Tutor
 Email: Juanito69@gmail.com
 Career: INGC
 ```
 
-You can use Fake data and insert in the Database, for example you can use [Faker](https://github.com/joke2k/faker)
+You can use Fake data and insert in the Database, for example you can use [Faker](https://github.com/joke2k/faker) to start to work.
