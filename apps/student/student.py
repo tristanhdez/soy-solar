@@ -1,5 +1,4 @@
 from flask import Blueprint, redirect, render_template, request, session, url_for
-from datetime import timedelta
 import re
 from .decorators import *
 from ..utils.database import *
@@ -82,7 +81,6 @@ def verify():
         if studentCode == result:
             session['studentCode'] = studentCode
             session.permanent = True
-            student.permanent_session_lifetime = timedelta(minutes=120)
             return redirect(url_for('student.index'))
     return redirect(url_for('student.login'))
 
