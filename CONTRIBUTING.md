@@ -22,7 +22,7 @@ This is the easier way to start with our project:
 
 ```
 $ pip install -r requirements.txt
-$ export FLASK_ENV=development
+$ export FLASK_DEBUG=development
 $ python3 main.py
 ```
 
