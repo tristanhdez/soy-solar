@@ -13,6 +13,7 @@ https://github.com/tristanhdez/soy-solar/issues
 Things you need before:
 
 * Python 3.x
+* MySQL
 * Flask
 * Pip
 
