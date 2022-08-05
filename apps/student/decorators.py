@@ -8,6 +8,5 @@ def login_required(f):
         if 'studentCode' in session:
             return f(*args, **kwargs)
         else:
-            print("No session")
             return redirect('login')
     return wrap

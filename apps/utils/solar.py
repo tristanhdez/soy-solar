@@ -30,5 +30,3 @@ class Question(Solar):
         error_find_answer_reason = "no tenemos esa información en nuestra base de datos, nos apoyarías muchísimo si colaboras con tu pregunta en la sección: ¡Colabora una Pregunta!"
         context = BASE_ERROR_MESSAGE.format(error_reason=error_find_answer_reason)
         return super().find_answer(question=context)
-
-

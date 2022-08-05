@@ -2,7 +2,10 @@ from flask import Blueprint, redirect, render_template, request, session, url_fo
 import re
 from .decorators import *
 from ..utils.database import *
-from .controlator import *
+from ..utils.solar import *
+from ..utils.find_tutor import *
+from ..utils.clean_str import *
+from ..utils.validate_student import *
 
 
 student = Blueprint("student",__name__, static_folder="static", template_folder="templates")
@@ -61,24 +64,23 @@ def chatbotResponse():
     the_question = request.form['question']
     if request.method == 'POST' and the_question:
         if re.match("^[0-9]{9}$[ ]{0}", the_question):
-            answer = find_tutor(the_question)
-            if type(answer) is tuple:
-                result = delete_special_characters(answer)
-                return result
-            return answer
-    answer = find_answer(the_question)
-    if type(answer) is tuple:
-        result = delete_special_characters(answer)
+            answer = Get_Tutor(the_question).find_tutor()
+            result = Clean(answer).cleaned()
+            return result
+        answer = Question(the_question).find_answer()
+        result = Clean(answer).cleaned()
         return result
-    return answer
+    return result
 
 
 @student.route('/verify', methods=["POST"])
 def verify():
     studentCode = request.form['code']
     if request.method == 'POST' and studentCode and re.match("^[0-9]{9}$[ ]{0}", studentCode):
-        result = validate_student(studentCode)
-        if studentCode == result:
+        result = Validate(studentCode)
+        temp = result.validate_student()
+        result = Clean(temp).cleaned()
+        if studentCode == result.replace(" ",""):
             session['studentCode'] = studentCode
             session.permanent = True
             return redirect(url_for('student.index'))
