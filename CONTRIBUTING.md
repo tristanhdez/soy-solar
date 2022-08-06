@@ -42,6 +42,47 @@ Remember create your `.env`:
 SECRET_KEY="YOUR_SUPER_SECRET_KEY"
 ```
 
+## Project Layout
+
+Project layout
+--------------
+
+    ├─ .github/             Templates and Dependabot yml
+    ├─ apps/                Apps of Solar
+        ├─ guest/           Guest Section
+        ├─ home/            Home Section
+        ├─ student/         Student Section
+        ├─ utils/           Classes
+    ├─ db/                  Solar Template Database
+    ├─ docs/                Documentation
+    ├─ static/              Design/Styles
+        ├─ css/             CSS Styles
+            ├─ error/       Error Styles
+                ├─ client/  Client Styles
+                ├─ server/  Server Styles
+            ├─ guest/       Guest Styles
+            ├─ home/        Home Styles
+            ├─ student/     Student Styles
+        ├─ img/             Images of Solar
+            ├─ home/        Home Page Images
+                ├─ index/   Index Images
+                ├─ section/ Section Images
+            ├─ icons/       Icons of Solar
+            ├─ wallpaper/   Wallpapers of Solar
+        ├─ js/              Scripts Functions to return answers of questions
+            ├─ guest/       Guest Scripts
+            ├─ student/     Student Scripts
+    ├─ templates/           HTML Documents
+        ├─ errors/          Errors templates
+            ├─ client/      Client Templates
+            ├─ server/      Server Templates
+        ├─ guest/           Guest Templates
+        ├─ home/            Home templates
+        ├─ student/         Student Templates
+    ├─ test/                Testing
+        ├─ pytest/          Testing with PyTest
+
+
 ### Credentials
 
 Take in consideration the next data by default on database template `soy-solar-template` :
