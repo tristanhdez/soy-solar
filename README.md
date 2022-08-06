@@ -3,7 +3,7 @@
   <img src="static/img/icons/solar_icon_head.png" alt="Solar">
 </h1>
 
-Solar is a Artificial Intelligence Asistent to answer the common questions for the
+Solar is an Artificial Intelligence Asistent to answer the common questions for the
 tutoring department at Universidad de Guadalajara CUTONALÁ answering common questions the students may have had and with intention to create an open source project to help the students who does not have experience and want to start contributing.
 
 
