@@ -7,13 +7,16 @@ Solar is an Artificial Intelligence Asistent to answer the common questions for 
 tutoring department at Universidad de Guadalajara CUTONALÁ answering common questions the students may have had and with intention to create an open source project to help the students who does not have experience and want to start contributing.
 
 
+<iframe width="560" height="315" src="static/solar-preview.mp4" frameborder="0" allowfullscreen></iframe>
+
+
 ## 😮 Features
 
 * New UI Design
 * Working with relational database management systems (RDBMS)
 * New Solar Designs
 
-## Next Features
+## 🗒️ Next Features
 
 * Solar with Neuronal Network (see on [Version_2](https://github.com/tristanhdez/soy-solar/tree/version_2) Branch)
 * Improve UI "Palabras Clave" Design
@@ -40,13 +43,13 @@ If you want to contribute please, [check here](https://github.com/tristanhdez/so
 
 The Solar Project actually is not shared for CUTONALÁ for testing reasons, only is sharing for people who's testing our project.
 
-## Contact
+## ✉️ Contact
 
 * Tristan - tristanhdez01@gmail.com
 
 Project Link: https://github.com/tristanhdez/soy-solar
 
-## Team
+## 🧩 Team
 
 This project was created by:
 
@@ -55,6 +58,6 @@ This project was created by:
 
 
 
-## Credits
+## 💚 Credits
 
 Special thanks to Universidad de Guadalajara - CUTONALÁ and the team.
