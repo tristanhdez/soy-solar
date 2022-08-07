@@ -36,6 +36,25 @@ When you feel more confortable, now you can contribute with us!
 If you want to contribute please, [check here](https://github.com/tristanhdez/soy-solar/blob/master/CONTRIBUTING.md)
 
 
-# 📝 NOTE
+# 📝 Note
 
 The Solar Project actually is not shared for CUTONALÁ for testing reasons, only is sharing for people who's testing our project.
+
+## Contact
+
+* Tristan - tristanhdez01@gmail.com
+
+Project Link: https://github.com/tristanhdez/soy-solar
+
+## Team
+
+This project was created by:
+
+
+[Tristan 🌱](https://github.com/tristanhdez)
+
+
+
+## Credits
+
+Special thanks to Universidad de Guadalajara - CUTONALÁ and the team.
