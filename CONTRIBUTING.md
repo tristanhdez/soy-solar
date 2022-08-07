@@ -11,12 +11,11 @@ https://github.com/tristanhdez/soy-solar/issues
 ### Prerequisites
 
 Things you need before:
-
+```
 * Python 3.x
 * MySQL
 * Flask
-* Pip
-
+```
 ### Installation
 
 This is the easier way to start with our project:
@@ -44,8 +43,6 @@ SECRET_KEY="YOUR_SUPER_SECRET_KEY"
 
 ## Project Layout
 
-Project layout
---------------
 
     ├─ .github/             Templates and Dependabot yml
     ├─ apps/                Apps of Solar
