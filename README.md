@@ -7,7 +7,7 @@ Solar is an Artificial Intelligence Asistent to answer the common questions for 
 tutoring department at Universidad de Guadalajara CUTONALÁ answering common questions the students may have had and with intention to create an open source project to help the students who does not have experience and want to start contributing.
 
 
-<iframe width="560" height="315" src="static/solar-preview.mp4" frameborder="0" allowfullscreen></iframe>
+  <img src="static/solar_preview.gif" alt="Solar">
 
 
 ## 😮 Features
