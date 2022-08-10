@@ -17,7 +17,7 @@ def apply_caching(response):
     response.headers["HTTP-HEADER"] = "VALUE"
     response.headers['X-XSS-Protection'] = '1; mode=block'
     response.headers['X-Content-Type-Options'] = 'nosniff'
-    response.headers['Content-Security-Policy'] = "default-src 'self'"
+    #response.headers['Content-Security-Policy'] = "default-src 'self'"
     response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
     return response
 
