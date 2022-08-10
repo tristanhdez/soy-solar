@@ -12,9 +12,9 @@ https://github.com/tristanhdez/soy-solar/issues
 
 Things you need before:
 ```
-* Python 3.x
-* MySQL
-* Flask
+$ Python 3.x
+$ MySQL
+$ Flask
 ```
 ### Installation
 
@@ -38,15 +38,11 @@ Please, take in consideration the next arguments on `Config.py`:
 
 Remember create your `.env`:
 ```
-SECRET_KEY = 'YOUR_SUPER_SECRET_KEY'
+SECRET_KEY="YOUR_SUPER_SECRET_KEY"
 ```
 
-## Important
-
-Run your project on `http://127.0.0.1:5000/`
-
 ## Project Layout
-
+--------------
 
     ├─ .github/             Templates and Dependabot yml
     ├─ apps/                Apps of Solar
