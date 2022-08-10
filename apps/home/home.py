@@ -3,6 +3,18 @@ from flask import Blueprint, render_template
 
 home = Blueprint("home",__name__, static_folder="static", template_folder="templates")
 
+
+@home.after_request
+def apply_caching(response):
+    response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    response.headers["HTTP-HEADER"] = "VALUE"
+    response.headers['X-XSS-Protection'] = '1; mode=block'
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    #response.headers['Content-Security-Policy'] = "default-src 'self'"
+    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    return response
+
+
 @home.route("/")
 def index():
     return render_template('home/index.html')

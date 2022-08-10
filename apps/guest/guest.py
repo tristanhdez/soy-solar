@@ -11,6 +11,17 @@ def index():
     return render_template('guest/index.html')
 
 
+@guest.after_request
+def apply_caching(response):
+    response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    response.headers["HTTP-HEADER"] = "VALUE"
+    response.headers['X-XSS-Protection'] = '1; mode=block'
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    #response.headers['Content-Security-Policy'] = "default-src 'self'"
+    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    return response
+
+
 @guest.route('/chatbot_student', methods=["POST"])
 def chatbotResponse():
     the_question = request.form['question']

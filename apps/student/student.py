@@ -11,6 +11,17 @@ from ..utils.validate_student import *
 student = Blueprint("student",__name__, static_folder="static", template_folder="templates")
 
 
+@student.after_request
+def apply_caching(response):
+    response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    response.headers["HTTP-HEADER"] = "VALUE"
+    response.headers['X-XSS-Protection'] = '1; mode=block'
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    #response.headers['Content-Security-Policy'] = "default-src 'self'"
+    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    return response
+
+
 @student.route('/')
 @login_required
 def index():
@@ -77,10 +88,10 @@ def chatbotResponse():
 def verify():
     studentCode = request.form['code']
     if request.method == 'POST' and studentCode and re.match("^[0-9]{9}$[ ]{0}", studentCode):
-        result = Validate(studentCode)
-        temp = result.validate_student()
-        result = Clean(temp).cleaned()
+        result = Validate(studentCode).validate_student()
+        result = Clean(result).cleaned()
         if studentCode == result.replace(" ",""):
+            session.clear()
             session['studentCode'] = studentCode
             session.permanent = True
             return redirect(url_for('student.index'))
