@@ -55,9 +55,13 @@ This project was created by:
 
 
 [Tristan 🌱](https://github.com/tristanhdez)
+
 [Diana](https://github.com/DianaUrdialesReyes)
+
 [Gema](https://github.com/GemaEstrada)
+
 [Brenda]()
+
 [Oziel](https://github.com/Oziel8)
 
 
