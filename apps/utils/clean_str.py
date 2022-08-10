@@ -14,5 +14,5 @@ class Clean(Clean_Str):
 
     def cleaned(self):
         result = self.str.replace("(","").replace(")","").replace("'","")\
-        .replace("\\n"," ").replace("\\r"," ").replace("\\"," ").replace(","," ")
+        .replace('\\n', '\n').replace('\\t', '\t').replace("\\r","\r").replace("\\"," ").replace(","," ")
         return result
