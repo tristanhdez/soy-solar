@@ -20,6 +20,6 @@ mysql.init_app(app)
 
 if __name__ == "__main__":
     try:
-        app.run(host='0.0.0.0', port=5000, debug=True)
+        app.run(host='0.0.0.0', port=5000, debug=False)
     except Exception as e:
         print(str(e))
