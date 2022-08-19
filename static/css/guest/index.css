@@ -564,7 +564,9 @@ Message Box
 	.chat {
 		width: 450px;
 	}
-
+  .messages .message {
+    font-size: 13px;
+  }
   .message-box .message-input {
     width: 370px;
   }
@@ -578,6 +580,10 @@ Message Box
 		width: 370px;
 		align-items: left;
 	}
+
+  .messages .message {
+    font-size: 12px;
+  }
 
   .message-box .message-input {
     width: 270px;
