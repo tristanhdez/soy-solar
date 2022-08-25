@@ -55,7 +55,7 @@ class Question(Solar):
     def find_answer(self):
         connection = mysql.connect()
         cursor = connection.cursor()
-        row = cursor.execute("SELECT answer, link FROM questions WHERE keyword='"+str(self.keywords)+"'")
+        row = cursor.execute("SELECT question, answer, link FROM questions WHERE keyword='"+str(self.keywords)+"'")
         connection.commit()
         answer = cursor.fetchall()
         cursor.close()
