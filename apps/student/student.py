@@ -6,6 +6,7 @@ from ..utils.solar import *
 from ..utils.find_tutor import *
 from ..utils.clean_str import *
 from ..utils.validate_student import *
+from ..utils.getting_keywords import *
 
 
 student = Blueprint("student",__name__, static_folder="static", template_folder="templates")
@@ -48,7 +49,8 @@ def contact_with_us():
 @student.route("/keywords")
 @login_required
 def keywords():
-    return render_template('student/keywords.html')
+    keywords = Keywords().find_keywords()
+    return render_template('student/keywords.html', keywords=keywords)
 
 
 @student.route("/suggest_question")

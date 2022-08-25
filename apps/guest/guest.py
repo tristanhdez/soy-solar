@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request
 from ..utils.clean_str import *
 from ..utils.solar import *
-
+from ..utils.getting_keywords import *
 
 guest = Blueprint("guest",__name__, static_folder="static", template_folder="templates")
 
@@ -41,7 +41,8 @@ def faq():
 
 @guest.route("/keywords")
 def keywords():
-    return render_template('guest/keywords.html')
+    keywords = Keywords().find_keywords()
+    return render_template('student/keywords.html', keywords=keywords)
 
 
 @guest.errorhandler(400)
