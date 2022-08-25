@@ -16,31 +16,21 @@ function updateScrollbar() {
   });
 }
 
-function setDate(){
-  d = new Date()
-  if (m != d.getMinutes()) {
-    m = d.getMinutes();
-    $('<div class="timestamp">' + d.getHours() + ':' + m + '</div>').appendTo($('.message:last'));
-  }
-}
-
 function insertMessage() {
-    var msg_without_changes = $('.message-input').val().replace(/</g, "&lt;").
-    replace(/>/g, "&gt;").replace(/'/g, "&#39;")
-    .replace(/"/g, "&#34;").normalize("NFD")
-    var msg = $('.message-input').val().replace(/</g, "&lt;").
-    replace(/>/g, "&gt;").replace(/'/g, "&#39;")
-    .replace(/"/g, "&#34;").normalize("NFD").toLowerCase()
-    .replace(/\s+/g,"") //replace whitespaces.
-    .replace(/[\u0300-\u036f]/g, "") //replace accents.
-    .replace(/[!@#$%^&*?¿,.;:]/g,"") //replace invalid characters.;
-    if ($.trim(msg) == '') {
-      return false;
-    }
-    $('<div class="message message-personal">' + msg_without_changes + '</div>').appendTo($('.mCSB_container')).addClass('new');
-    setDate();
-    updateScrollbar();
-    gettingMessage();
+  var msg_without_changes = $('.message-input').val().replace(/</g, "&lt;").
+  replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&#34;").normalize("NFD")
+  var msg = $('.message-input').val().replace(/</g, "&lt;").
+  replace(/>/g, "&gt;").replace(/'/g, "&#39;")
+  .replace(/"/g, "&#34;").normalize("NFD").toLowerCase()
+  .replace(/\s+/g,"") //replace whitespaces.
+  .replace(/[\u0300-\u036f]/g, "") //replace accents.
+  .replace(/[!@#$%^&*?¿,.;:]/g,"") //replace invalid characters.;
+  if ($.trim(msg) == '') {
+    return false;
+  }
+  $('<div class="message message-personal">' + msg_without_changes + '</div>').appendTo($('.mCSB_container')).addClass('new');
+  updateScrollbar();
+  gettingMessage();
 }
 
 $('.message-submit').click(function() {
@@ -73,7 +63,6 @@ function gettingMessage(){
             setTimeout(()=>{
               $('.message.loading').remove();
               $('<div class="message new"><figure class="avatar"><img src="/static/img/icons/solar_icon_chat.png" /></figure>' + `${result}` + '</div>').appendTo($('.mCSB_container')).addClass('new');
-              setDate();
               updateScrollbar();
             },500)
             $("#question").val("");
@@ -85,8 +74,7 @@ function gettingMessage(){
 }
 
 
-var Fake = '¡Hola! Soy Solar y seré tu asistente virtual. Sé que quieres conocer acerca de nuestra universidad, así que, checa la sección "Palabras Clave" para tener más información.'
-
+const first_message = "¡Hola! Soy Solar ☀️🤖 y seré tu asistente virtual. \n Si no tienes idea de qué preguntar y/o cómo, puedes checar en la sección Palabras Clave 😊";
 
 function fakeMessage() {
     if ($('.message-input').val() != '') {
@@ -94,12 +82,11 @@ function fakeMessage() {
     }
     $('<div class="message loading new"><figure class="avatar"><img src="/static/img/icons/solar_icon_chat.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
     updateScrollbar();
-  
+
     setTimeout(function() {
       $('.message.loading').remove();
-      $('<div class="message new"><figure class="avatar"><img src="/static/img/icons/solar_icon_chat.png" /></figure>' + Fake + '</div>').appendTo($('.mCSB_container')).addClass('new');
-      setDate();
+      $('<div class="message new"><figure class="avatar"><img src="/static/img/icons/solar_icon_chat.png" /></figure>' + first_message + '</div>').appendTo($('.mCSB_container')).addClass('new');
       updateScrollbar();
     }, 500);
-  
+
   }

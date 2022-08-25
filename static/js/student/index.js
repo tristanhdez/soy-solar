@@ -63,7 +63,6 @@ function gettingMessage(){
 
             setTimeout(()=>{
               $('.message.loading').remove();
-              console.log(result);
               $('<div class="message new"><figure class="avatar"><img src="/static/img/icons/solar_icon_chat.png" /></figure>' + `${result}` + '</div>').appendTo($('.mCSB_container')).addClass('new');
               updateScrollbar();
             },500)
