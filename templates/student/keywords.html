@@ -1,62 +1,61 @@
 {% extends 'base.html' %}
 {% block title %}
-    Solar
+    Palabras Clave
 {% endblock %}
 {% block content %}
 <link href="{{ url_for('static',filename='css/student/keywords.css') }}" rel="stylesheet" type="text/css">
-
-<div class="box">
-  <ul class="directory-list">
-    <li>Palabras Clave
-      <ul>
-        <li>Etapa Inicial
-          <ul>
-            <li>Reglamento Estudiante</li>
-            <li>Articulo 33</li>
-            <li>Articulo 34</li>
-            <li>Credencial Estudiante</li>
-            <li>Horarios Control Escolar</li>
-            <li>Malla Curricular</li>
-            <li>Centro Global de Idiomas</li>
-            <li>Instalaciones Deportivas</li>
-            <li>Cineteca</li>
-            <li>Extraordinario</li>
-            <li>Créditos por Semestre</li>
-            <li>Coordinador Carrera</li>
-            <li>Baja de Materia</li>
-            <li>Calendario Escolar</li>
-            <li>Semana Ciencia</li>
-            <li>Registro Materias</li>
-            <li>Orden de Pago</li>
-            <li>Psicología</li>
-            <li>Reprobar</li>
-            <li>Extraordinario</li>
-            <li>Justificante</li>
-            <li>Evaluación</li>
-            <li>Derecho Ordinario</li>
-            <li>Protección Civil</li>
-            <li>Cineteca</li>
-            <li>Cineteca</li>
-          </ul>
-        </li>
-        <li>Etapa Media
-          <ul>
-            <li>custom.js</li>
-            <li>jquery.js</li>
-          </ul>
-        </li>
-        <li>Etapa Final
-          <ul>
-            <li>logo.svg</li>
-            <li>arrow-sprite.svg</li>
-            <li>social-sprite.svg</li>
-          </ul>
-        </li>
-        <li>functions.php</li>
-      </ul>
-    </li>
-    <li>Tu código de estudiante = Tu tutor.</li>
-    <li>style.css</li>
-  </ul>
+<div class="main_title">
+    ¡Hola! 👋🏽
+    <br>Aquí podrás encontrar todas las palabras Clave Existentes.
+    <br>Puedes copiar la palabra clave dando click en ella.
 </div>
+<div class="cards-list">
+    <div class="card">
+        <div class="card_image">
+                <div class="title">
+                    🗝️ Palabra Clave 🗝️
+                </div>
+                <div class="keyword">
+                    Tu Código de Estudiante
+                </div>
+                <div class="title">
+                    💬 Descripción 💬
+                </div>
+                <div class="description">
+                    Si necesitas saber quién es tu tutor y cómo puedes contactarte con dicho tutor, puedes utilizar tu código de estudiante:
+                    <br><font style="color: red;">Ej. 215628999</font>
+                </div>
+        </div>
+    </div>
+    {% if keywords %}
+        {% for keyword in keywords %}
+    <div class="card">
+        <div class="card_image">
+                <div class="title">
+                    🗝️ Palabra Clave 🗝️
+                </div>
+                <div class="keyword" onclick="copy_data(this)">
+                        {{ keyword[0] }}
+                </div>
+                <div class="title">
+                    💬 Descripción 💬
+                </div>
+                <div class="description">
+                    {{ keyword[1] }}
+                </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="card">
+        <div class="card_image">
+            ERROR
+        </div>
+    </div>
+    {% endif %}
+</div>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.mCustomScrollbar.contact.min.js') }}""></script>
+<script src="{{ url_for('static', filename='js/copyboard.js') }}"></script>
+
 {% endblock %}
