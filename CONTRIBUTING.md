@@ -41,6 +41,12 @@ Remember create your `.env`:
 SECRET_KEY="YOUR_SUPER_SECRET_KEY"
 ```
 
+And follow our Python Style Code.
+
+## NOTE
+
+Please configure your Editor Text or IDE to works with `.editorconfig`
+
 ## Project Layout
 --------------
 
@@ -102,4 +108,4 @@ Email: Juanito69@gmail.com
 Career: INGC
 ```
 
-You can use Fake data and insert in the Database, for example you can use [Faker](https://github.com/joke2k/faker) to start to work.
+You can use Fake data and insert in the Database, e.g. [Faker](https://github.com/joke2k/faker) to start to work.
