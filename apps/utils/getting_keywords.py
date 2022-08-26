@@ -1,11 +1,12 @@
 from ..utils.database import *
 
-KEYWORD_BASE = "{keywords}"
 
 class Keywords():
 
+
     def __init__(self) -> None:
         pass
+
 
     def find_keywords(self):
         connection = mysql.connect()
