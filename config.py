@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from datetime import timedelta
 
+
 basedir = path.abspath(path.dirname(__file__))
 load_dotenv(path.join(basedir, '.env'))
 
@@ -10,17 +11,17 @@ load_dotenv(path.join(basedir, '.env'))
 class Config:
     """BASE CONFIG"""
     SESSION_COOKIE_SECURE=True
-    PERMANENT_SESSION_LIFETIME=timedelta(minutes=120)
     SESSION_COOKIE_HTTPONLY=True
     SESSION_COOKIE_SAMESITE='Lax'
     REMEMBER_COOKIE_SECURE = True
+    PERMANENT_SESSION_LIFETIME=timedelta(minutes=120)
     SECRET_KEY = os.environ.get('SECRET_KEY')
     STATIC_FOLDER = 'static'
     TEMPLATES_FOLDER = 'templates'
-    MYSQL_DATABASE_HOST = ''
-    MYSQL_DATABASE_USER = ''
-    MYSQL_DATABASE_PASSWORD = ''
-    MYSQL_DATABASE_DB= ''
+    MYSQL_DATABASE_HOST = '****'
+    MYSQL_DATABASE_USER = '****'
+    MYSQL_DATABASE_PASSWORD = '****'
+    MYSQL_DATABASE_DB= '****'
 
 
 class ProdConfig(Config):
